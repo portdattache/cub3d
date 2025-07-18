@@ -6,7 +6,7 @@
 /*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:37:29 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/18 22:10:14 by broboeuf         ###   ########.fr       */
+/*   Updated: 2025/07/19 01:31:14 by broboeuf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	is_wall(t_game *game, int x, int y)
  */
 void	fill_ray_vertical(t_ray *ray, t_game *game, t_ray_calc calc, int right)
 {
-	ray->distance = sqrt(pow(calc.x - game->player.map_pos.x, 2) + pow(calc.y
+	ray->distance = sqrt(pow(calc.x - game->player.pos_x, 2) + pow(calc.y
 				- game->player.map_pos.y, 2));
 	ray->point.x = calc.x;
 	ray->point.y = calc.y;

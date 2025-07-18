@@ -6,7 +6,7 @@
 /*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:39:00 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/18 20:59:08 by broboeuf         ###   ########.fr       */
+/*   Updated: 2025/07/19 01:32:44 by broboeuf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ static t_ray_calc	get_vertical_calc(t_ray_calc r, t_game *game, int right)
 	r.delta_x = right ? 1 : -1;
 	r.delta_y = r.delta_x * slope;
 	if (right)
-		r.x = ceil(game->player.map_pos.x);
+		r.x = ceil(game->player.pos_x);
 	else
-		r.x = floor(game->player.map_pos.x);
-	r.y = game->player.map_pos.y + (r.x - game->player.map_pos.x) * slope;
+		r.x = floor(game->player.pos_x);
+	r.y = game->player.map_pos.y + (r.x - game->player.pos_x) * slope;
 	return (r);
 }
 
@@ -49,10 +49,10 @@ static t_ray_calc	get_horizontal_calc(t_ray_calc r, t_game *game, int up)
 	r.delta_y = up ? -1 : 1;
 	r.delta_x = r.delta_y * slope;
 	if (up)
-		r.y = floor(game->player.map_pos.y);
+		r.y = floor(game->player.pos_y);
 	else
-		r.y = ceil(game->player.map_pos.y);
-	r.x = game->player.map_pos.x + (r.y - game->player.map_pos.y) * slope;
+		r.y = ceil(game->player.pos_y);
+	r.x = game->player.pos_x + (r.y - game->player.pos_y) * slope;
 	return (r);
 }
 
@@ -109,7 +109,7 @@ static void	perform_horizontal_dda(t_ray_calc r, t_game *game, t_ray *ray,
 		wall_x = floor(r.x);
 		if (is_wall(game, wall_x, wall_y))
 		{
-			dist = sqrt(pow(r.x - game->player.map_pos.x, 2) + pow(r.y
+			dist = sqrt(pow(r.x - game->player.pos_x, 2) + pow(r.y
 						- game->player.map_pos.y, 2));
 			if (!ray->distance || dist < ray->distance)
 			{

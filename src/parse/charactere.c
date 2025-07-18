@@ -6,7 +6,7 @@
 /*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:33:50 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/19 00:20:34 by broboeuf         ###   ########.fr       */
+/*   Updated: 2025/07/19 01:33:05 by broboeuf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,10 @@ void	get_player_start(t_game *game)
 			if (game->map[i][j] == 'N' || game->map[i][j] == 'S'
 				|| game->map[i][j] == 'E' || game->map[i][j] == 'W')
 			{
-				game->player.map_pos.x = (int)(game->player.pos_x / CUBE_SIZE);
-				game->player.map_pos.y = (int)(game->player.pos_y / CUBE_SIZE);
+				game->player.pos_x = j;
+				game->player.pos_y = i;
+				game->player.pos_x = (j + 0.5) * CUBE_SIZE;
+				game->player.pos_y = (i + 0.5) * CUBE_SIZE;
 				game->player.dir = get_player_orientation(game->map[i][j]);
 				game->player.speed = SPEED;
 				return ;

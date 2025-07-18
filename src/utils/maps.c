@@ -6,7 +6,7 @@
 /*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:49:33 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/18 23:32:41 by broboeuf         ###   ########.fr       */
+/*   Updated: 2025/07/19 01:33:17 by broboeuf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,8 @@ int	init_game_data(t_game *game)
 	game->map_width = 0;
 	game->map_height = 0;
 	game->map = NULL;
-	game->player.map_pos.x = 0;
-	game->player.map_pos.y = 0;
+	game->player.pos_x = 0;
+	game->player.pos_y = 0;
 	game->player.dir = 0;
 	game->rays = NULL;
 	return (1);
