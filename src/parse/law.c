@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   law.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bcaumont <bcaumont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:35:01 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/18 23:09:25 by broboeuf         ###   ########.fr       */
+/*   Updated: 2025/07/19 21:36:20 by bcaumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3d.h"
+#include "../../includes/cub3D.h"
 
 /**
  * Vérifie si toutes les textures et couleurs ont bien été chargées

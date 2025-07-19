@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bcaumont <bcaumont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:56:57 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/18 22:33:45 by broboeuf         ###   ########.fr       */
+/*   Updated: 2025/07/19 21:37:48 by bcaumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3d.h"
+#include "../includes/cub3D.h"
 
 /**
  * Point d’entrée principal du programme cub3D

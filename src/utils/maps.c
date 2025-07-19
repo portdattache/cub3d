@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   maps.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bcaumont <bcaumont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:49:33 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/19 01:33:17 by broboeuf         ###   ########.fr       */
+/*   Updated: 2025/07/19 21:37:22 by bcaumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3d.h"
+#include "../../includes/cub3D.h"
 
 /**
  * Vérifie si le caractère correspond à une orientation du joueur

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   calculate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bcaumont <bcaumont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:50:46 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/18 23:13:58 by broboeuf         ###   ########.fr       */
+/*   Updated: 2025/07/19 20:50:54 by bcaumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3d.h"
+#include "../../includes/cub3D.h"
 
 /**
  * Normalise un angle en radians dans l’intervalle [0 ; 2π)

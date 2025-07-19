@@ -13,12 +13,34 @@ LIBFT		= $(LIB_DIR)/libcub.a
 
 # Compilation
 CC			= cc
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror -g
 INCLUDES	= -I$(INC_DIR) -I$(LIB_DIR)/libft -I$(LIB_DIR)/ft_printf -I$(LIB_DIR)/get_next_line -I$(MLX_DIR)
 MLX_FLAGS	= -L$(MLX_DIR) -lmlx -lXext -lX11 -lm
 
 # Sources / objets
-SRCS		= $(shell find $(SRC_DIR) -name "*.c")
+SRCS         = \
+	src/algo/bressenham.c \
+	src/algo/calculate.c \
+	src/algo/trace.c \
+	src/dda/frame.c \
+	src/dda/raycast.c \
+	src/dda/raycast_utils.c \
+	src/main.c \
+	src/mlx/mlx_utils.c \
+	src/mlx/put_pixel.c \
+	src/parse/add_textures.c \
+	src/parse/charactere.c \
+	src/parse/colors.c \
+	src/parse/law.c \
+	src/parse/parsing_map.c \
+	src/utils/block.c \
+	src/utils/errors.c \
+	src/utils/free.c \
+	src/utils/init_walls.c \
+	src/utils/maps.c \
+	src/utils/move.c \
+	src/utils/strings.c\
+	src/bonus/mouse_movements.c
 OBJS		= $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 # Couleurs
@@ -30,10 +52,10 @@ all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJS)
 	@$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) $(LIBFT) -o $@ $(MLX_FLAGS)
-	@echo "$(GREEN)[OK]$(RESET) Compilation terminée."
+	@echo "$(GREEN)[OK]$(RESET)✅ Compilation terminée."
 
 $(LIBFT):
-	@$(MAKE) -C $(LIB_DIR)
+	@$(MAKE) -sC $(LIB_DIR)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(dir $@)
@@ -41,13 +63,13 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 
 clean:
 	@rm -rf $(OBJ_DIR)
-	@$(MAKE) -C $(LIB_DIR) clean
+	@$(MAKE) -sC $(LIB_DIR) clean
 	@echo "$(GREEN)[OK]$(RESET) Clean."
 
 fclean: clean
 	@rm -f $(NAME)
-	@$(MAKE) -C $(LIB_DIR) fclean
+	@$(MAKE) -sC $(LIB_DIR) fclean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re update
