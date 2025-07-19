@@ -6,7 +6,7 @@
 /*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:39:00 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/19 01:32:44 by broboeuf         ###   ########.fr       */
+/*   Updated: 2025/07/19 03:00:58 by broboeuf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,16 @@ static t_ray_calc	get_vertical_calc(t_ray_calc r, t_game *game, int right)
 	double	slope;
 
 	slope = r.angle_sin / r.angle_cos;
-	r.delta_x = right ? 1 : -1;
+	if (right)
+		r.delta_x = 1;
+	else
+		r.delta_x = -1;
 	r.delta_y = r.delta_x * slope;
 	if (right)
 		r.x = ceil(game->player.pos_x);
 	else
 		r.x = floor(game->player.pos_x);
-	r.y = game->player.map_pos.y + (r.x - game->player.pos_x) * slope;
+	r.y = game->player.pos_y + (r.x - game->player.pos_x) * slope;
 	return (r);
 }
 
@@ -46,7 +49,10 @@ static t_ray_calc	get_horizontal_calc(t_ray_calc r, t_game *game, int up)
 	double	slope;
 
 	slope = r.angle_cos / r.angle_sin;
-	r.delta_y = up ? -1 : 1;
+	if (up)
+		r.delta_y = -1;
+	else
+		r.delta_y = 1;
 	r.delta_x = r.delta_y * slope;
 	if (up)
 		r.y = floor(game->player.pos_y);
@@ -63,18 +69,23 @@ static t_ray_calc	get_horizontal_calc(t_ray_calc r, t_game *game, int up)
  * @param ray structure du rayon à remplir
  * @param angle angle du rayon
  */
-static void	perform_vertical_dda(t_ray_calc r, t_game *game, t_ray *ray,
+void	perform_vertical_dda(t_ray_calc r, t_game *game, t_ray *ray,
 		double angle)
 {
 	int		right;
 	double	wall_x;
 	double	wall_y;
 
-	right = (angle > PI_3_2 || angle < M_PI_2);
+	right = 0;
+	if (angle > PI_3_2 || angle < M_PI_2)
+		right = 1;
 	r = get_vertical_calc(r, game, right);
 	while (coords_within_boundaries(game, r.x, r.y))
 	{
-		wall_x = right ? floor(r.x) : floor(r.x - 1);
+		if (right)
+			wall_x = floor(r.x);
+		else
+			wall_x = floor(r.x - 1);
 		wall_y = floor(r.y);
 		if (is_wall(game, wall_x, wall_y))
 		{
@@ -110,7 +121,7 @@ static void	perform_horizontal_dda(t_ray_calc r, t_game *game, t_ray *ray,
 		if (is_wall(game, wall_x, wall_y))
 		{
 			dist = sqrt(pow(r.x - game->player.pos_x, 2) + pow(r.y
-						- game->player.map_pos.y, 2));
+						- game->player.pos_y, 2));
 			if (!ray->distance || dist < ray->distance)
 			{
 				ray->distance = dist;

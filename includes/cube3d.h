@@ -6,7 +6,7 @@
 /*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:27:03 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/19 00:23:10 by broboeuf         ###   ########.fr       */
+/*   Updated: 2025/07/19 03:01:04 by broboeuf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,11 @@
 /* --- Contrôles clavier --- */
 # define LEFT_ARROW 65361
 # define RIGHT_ARROW 65363
-# define FORWARD 119  // W
-# define BACKWARD 115 // S
-# define LEFT 97      // A
-# define RIGHT 100    // D
-# define ESC 65307    // Escape
+# define FORWARD 119
+# define BACKWARD 115
+# define LEFT 97
+# define RIGHT 100
+# define ESC 65307
 
 /* --- Nombre de rayons --- */
 # define NB_RAYS 640

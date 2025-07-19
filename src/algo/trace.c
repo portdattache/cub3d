@@ -6,7 +6,7 @@
 /*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:43:46 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/18 20:58:57 by broboeuf         ###   ########.fr       */
+/*   Updated: 2025/07/19 02:55:29 by broboeuf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,14 @@ static void	draw_texture_column(t_game *game, t_ray ray, int x, int offset)
 
 	tex = get_texture(game, ray.face);
 	scale = tex->height / ray.height;
-	tex_x = (ray.axis == 1) ? ray.point.y % CUBE_SIZE : ray.point.x % CUBE_SIZE;
-	tex_y = (ray.height > HEIGHT) ? ((ray.height - HEIGHT) / 2) * scale : 0;
+	if (ray.axis == 1)
+		tex_x = ray.point.y % CUBE_SIZE;
+	else
+		tex_x = ray.point.x % CUBE_SIZE;
+	if (ray.height > HEIGHT)
+		tex_y = ((ray.height - HEIGHT) / 2) * scale;
+	else
+		tex_y = 0;
 	y = 0;
 	while (y < ray.height)
 	{
