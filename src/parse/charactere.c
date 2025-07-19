@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   charactere.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bcaumont <bcaumont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:33:50 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/19 01:33:05 by broboeuf         ###   ########.fr       */
+/*   Updated: 2025/07/19 21:13:09 by bcaumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3d.h"
+#include "../../includes/cub3D.h"
 
 /**
  * Retourne l’orientation du joueur en radians selon la lettre (N/S/E/W)

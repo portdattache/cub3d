@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bcaumont <bcaumont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:32:13 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/19 00:01:25 by broboeuf         ###   ########.fr       */
+/*   Updated: 2025/07/19 21:36:35 by bcaumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3d.h"
+#include "../../includes/cub3D.h"
 
 /**
  * Analyse une ligne du fichier .cub

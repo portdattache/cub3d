@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bcaumont <bcaumont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:28:02 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/18 23:42:54 by broboeuf         ###   ########.fr       */
+/*   Updated: 2025/07/20 00:23:27 by bcaumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3d.h"
+#include "../../includes/cub3D.h"
 
 /**
  * Charge une texture depuis un fichier .xpm
@@ -104,6 +104,9 @@ void	game_loop(t_game *game)
 	mlx_do_key_autorepeaton(game->mlx);
 	mlx_hook(game->win, 2, 1L << 0, handle_keys, game);
 	mlx_hook(game->win, 17, (1L << 2), free_game, game);
+	mlx_mouse_hide(game->mlx, game->win);
+	mlx_mouse_move(game->mlx, game->win, WIDTH / 2, HEIGHT / 2);
+	mlx_loop_hook(game->mlx, update_game, game);
 	draw_frame(game);
 	mlx_loop(game->mlx);
 }

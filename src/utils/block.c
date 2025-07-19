@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   block.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bcaumont <bcaumont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:48:28 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/18 20:59:40 by broboeuf         ###   ########.fr       */
+/*   Updated: 2025/07/19 22:56:33 by bcaumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3d.h"
+#include "../../includes/cub3D.h"
 
 /**
  * Vérifie s'il y a un mur ou un vide en bas du joueur

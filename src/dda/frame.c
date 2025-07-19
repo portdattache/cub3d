@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   frame.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bcaumont <bcaumont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:41:40 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/18 20:59:04 by broboeuf         ###   ########.fr       */
+/*   Updated: 2025/07/20 00:33:48 by bcaumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3d.h"
+#include "../../includes/cub3D.h"
 
 /**
  * Dessine l’image complète colonne par colonne
@@ -78,5 +78,7 @@ void	draw_frame(t_game *game)
 		free_game(game);
 	raycasting(game);
 	draw_image(game);
+	draw_minimap(game); // ici
+	mlx_put_image_to_window(game->mlx, game->win, game->screen.img, 0, 0);
 	mlx_put_image_to_window(game->mlx, game->win, game->screen.img, 0, 0);
 }

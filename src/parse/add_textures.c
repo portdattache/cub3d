@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   add_textures.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bcaumont <bcaumont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:36:08 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/18 23:12:17 by broboeuf         ###   ########.fr       */
+/*   Updated: 2025/07/19 21:12:34 by bcaumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3d.h"
+#include "../../includes/cub3D.h"
 
 /**
  * Charge la texture nord et la stocke dans la structure du jeu

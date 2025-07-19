@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   init_walls.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bcaumont <bcaumont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:47:45 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/18 20:59:49 by broboeuf         ###   ########.fr       */
+/*   Updated: 2025/07/19 21:37:12 by bcaumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube3d.h"
+#include "../../includes/cub3D.h"
 
 /**
  * Initialise la texture nord (NO)

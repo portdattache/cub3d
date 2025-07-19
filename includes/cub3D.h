@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cube3d.h                                           :+:      :+:    :+:   */
+/*   cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bcaumont <bcaumont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:27:03 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/19 03:01:04 by broboeuf         ###   ########.fr       */
+/*   Updated: 2025/07/20 00:34:31 by bcaumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# include "./../lib/lib.h"
-# include "./../minilibx-linux/mlx.h"
+# include "../../lib/lib.h"
+# include "../minilibx-linux/mlx.h"
 # include <fcntl.h>
 # include <math.h>
 # include <stdio.h>
@@ -68,6 +68,10 @@
 
 /* --- Nombre de rayons --- */
 # define NB_RAYS 640
+
+/* --- Positionnement de la minimap --- */
+# define MINIMAP_SCALE 8
+# define MINIMAP_MARGIN 10
 
 /* --- Direction des murs --- */
 enum					e_direction
@@ -212,5 +216,12 @@ void					move_player_forward(t_game *game);
 unsigned int			strlen_without_nl(const char *str);
 char					*strdup_trimmed(const char *str);
 int						string_array_length(char **array);
+int						mouse_move_hook(int x, int y, t_game *game);
+int						update_game(t_game *game);
+void					draw_line(t_image *img, int x0, int y0, int x1, int y1,
+							int color);
+void					draw_minimap(t_game *game);
+void					draw_square(t_image *img, int x, int y, int size,
+							int color);
 
 #endif
