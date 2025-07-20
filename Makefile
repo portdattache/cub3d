@@ -1,5 +1,5 @@
 # ==================== cub3D Makefile ====================
-NAME		= cube3D
+NAME		= cub3D
 
 # Dossiers
 SRC_DIR		= src
@@ -29,7 +29,7 @@ SRCS         = \
 	src/mlx/mlx_utils.c \
 	src/mlx/put_pixel.c \
 	src/parse/add_textures.c \
-	src/parse/charactere.c \
+	src/parse/character.c \
 	src/parse/colors.c \
 	src/parse/law.c \
 	src/parse/parsing_map.c \

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   charactere.c                                       :+:      :+:    :+:   */
+/*   character.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bcaumont <bcaumont@student.42.fr>          +#+  +:+       +#+        */
+/*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:33:50 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/19 21:13:09 by bcaumont         ###   ########.fr       */
+/*   Updated: 2025/07/21 01:45:09 by broboeuf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,10 @@ void	get_player_start(t_game *game)
 			if (game->map[i][j] == 'N' || game->map[i][j] == 'S'
 				|| game->map[i][j] == 'E' || game->map[i][j] == 'W')
 			{
-				game->player.pos_x = j;
-				game->player.pos_y = i;
-				game->player.pos_x = (j + 0.5) * CUBE_SIZE;
-				game->player.pos_y = (i + 0.5) * CUBE_SIZE;
+				game->player.map_pos.x = j * CUBE_SIZE + CUBE_SIZE / 2;
+				game->player.map_pos.y = i * CUBE_SIZE + CUBE_SIZE / 2;
+				game->player.pos_x = game->player.map_pos.x;
+				game->player.pos_y = game->player.map_pos.y;
 				game->player.dir = get_player_orientation(game->map[i][j]);
 				game->player.speed = SPEED;
 				return ;

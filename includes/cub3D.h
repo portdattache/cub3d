@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bcaumont <bcaumont@student.42.fr>          +#+  +:+       +#+        */
+/*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:27:03 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/20 00:34:31 by bcaumont         ###   ########.fr       */
+/*   Updated: 2025/07/21 01:36:25 by broboeuf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@
 /* --- Positionnement de la minimap --- */
 # define MINIMAP_SCALE 8
 # define MINIMAP_MARGIN 10
+/* --- Debug --- */
+# define DEBUG 1
 
 /* --- Direction des murs --- */
 enum					e_direction
@@ -218,10 +220,6 @@ char					*strdup_trimmed(const char *str);
 int						string_array_length(char **array);
 int						mouse_move_hook(int x, int y, t_game *game);
 int						update_game(t_game *game);
-void					draw_line(t_image *img, int x0, int y0, int x1, int y1,
-							int color);
 void					draw_minimap(t_game *game);
-void					draw_square(t_image *img, int x, int y, int size,
-							int color);
 
 #endif

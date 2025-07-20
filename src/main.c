@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bcaumont <bcaumont@student.42.fr>          +#+  +:+       +#+        */
+/*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:56:57 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/19 21:37:48 by bcaumont         ###   ########.fr       */
+/*   Updated: 2025/07/21 00:49:08 by broboeuf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int	main(int argc, char **argv)
 	t_game	game;
 
 	if (argc != 2)
-		return (print_error("Usage: ./cub3D path_to_map\n", EXIT_FAILURE));
+		return (print_error("Error: Wrong number of arguments\n",
+				EXIT_FAILURE));
 	if (!is_file_extension_correct(argv[1]))
 		return (print_error("Wrong file extension\n", EXIT_FAILURE));
 	game.mlx = mlx_init();

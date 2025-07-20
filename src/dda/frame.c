@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   frame.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bcaumont <bcaumont@student.42.fr>          +#+  +:+       +#+        */
+/*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:41:40 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/20 00:33:48 by bcaumont         ###   ########.fr       */
+/*   Updated: 2025/07/21 01:45:03 by broboeuf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,11 @@ static void	raycasting(t_game *game)
  */
 void	draw_frame(t_game *game)
 {
+	if (game->screen.img)
+	{
+		mlx_destroy_image(game->mlx, game->screen.img);
+		game->screen.img = NULL;
+	}
 	game->screen.img = mlx_new_image(game->mlx, WIDTH, HEIGHT);
 	if (!game->screen.img)
 		free_game(game);
@@ -78,7 +83,6 @@ void	draw_frame(t_game *game)
 		free_game(game);
 	raycasting(game);
 	draw_image(game);
-	draw_minimap(game); // ici
-	mlx_put_image_to_window(game->mlx, game->win, game->screen.img, 0, 0);
+	draw_minimap(game);
 	mlx_put_image_to_window(game->mlx, game->win, game->screen.img, 0, 0);
 }
