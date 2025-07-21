@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   add_textures.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bcaumont <bcaumont@student.42.fr>          +#+  +:+       +#+        */
+/*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:36:08 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/19 21:12:34 by bcaumont         ###   ########.fr       */
+/*   Updated: 2025/07/21 02:46:58 by broboeuf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,8 @@ static int	add_west_texture(char *line, t_game *game)
 
 /**
 
-	* Analyse une ligne de type texture (NO/SO/WE/EA) et appelle la fonction adaptée
+	* Analyse une ligne de type texture (NO/SO/WE/EA)
+	et appelle la fonction adaptée
  * @param game structure principale
  * @param line ligne du fichier .cub
  * @return 1 si texture ajoutée, 0 si erreur, -1 si ligne non reconnue

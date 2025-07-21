@@ -6,7 +6,7 @@
 /*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:51:25 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/21 01:45:18 by broboeuf         ###   ########.fr       */
+/*   Updated: 2025/07/21 02:54:40 by broboeuf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void	move_player_backward(t_game *game)
 	}
 	draw_frame(game);
 }
+
 /**
  * Déplace le joueur vers la gauche (strafe gauche)
  * @param game structure principale du jeu

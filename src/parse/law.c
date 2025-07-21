@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   law.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bcaumont <bcaumont@student.42.fr>          +#+  +:+       +#+        */
+/*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:35:01 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/19 21:36:20 by bcaumont         ###   ########.fr       */
+/*   Updated: 2025/07/21 02:47:24 by broboeuf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,8 @@ int	valid_surroundings(char **map, int i, int j)
 
 /**
 
-	* Vérifie que la carte est bien fermée par des murs (aucun espace autour d’un 0 ou d’un joueur)
+	* Vérifie que la carte est bien fermée par des murs
+		(aucun espace autour d’un 0 ou d’un joueur)
  * @param map tableau 2D représentant la carte
  * @return 1 si la carte est bien fermée, 0 sinon
  */

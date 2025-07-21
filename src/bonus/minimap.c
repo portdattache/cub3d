@@ -6,13 +6,16 @@
 /*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/20 00:31:44 by bcaumont          #+#    #+#             */
-/*   Updated: 2025/07/21 01:44:58 by broboeuf         ###   ########.fr       */
+/*   Updated: 2025/07/21 02:45:20 by broboeuf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3D.h"
 
-static void	draw_square(t_image *img, int x, int y, int size, int color)
+/**
+ * Dessine un carré plein à une position donnée sur l’image
+ */
+static void	draw_square(t_image *img, t_point pos, int size, int color)
 {
 	int	i;
 	int	j;
@@ -23,18 +26,22 @@ static void	draw_square(t_image *img, int x, int y, int size, int color)
 		j = 0;
 		while (j < size)
 		{
-			put_pixel(img, x + j, y + i, color);
+			put_pixel(img, pos.x + j, pos.y + i, color);
 			j++;
 		}
 		i++;
 	}
 }
 
+/**
+ * Dessine les tuiles de la minimap (murs, vides, autres)
+ */
 static void	draw_minimap_tiles(t_game *game, int scale)
 {
-	int	x;
-	int	y;
-	int	color;
+	t_point	pos;
+	int		x;
+	int		y;
+	int		color;
 
 	y = 0;
 	while (y < game->map_height)
@@ -48,36 +55,37 @@ static void	draw_minimap_tiles(t_game *game, int scale)
 				color = 0x000000;
 			else
 				color = 0x333333;
-			draw_square(&game->screen, MINIMAP_MARGIN + x * scale,
-				MINIMAP_MARGIN + y * scale, scale, color);
+			pos.x = MINIMAP_MARGIN + x * scale;
+			pos.y = MINIMAP_MARGIN + y * scale;
+			draw_square(&game->screen, pos, scale, color);
 			x++;
 		}
 		y++;
 	}
 }
 
+/**
+ * Dessine la position et la direction du joueur sur la minimap
+ */
 static void	draw_player(t_game *game, int scale)
 {
-	t_point	p1;
-	t_point	p2;
-	int		px;
-	int		py;
+	t_point	center;
+	t_point	dir;
 
-	px = MINIMAP_MARGIN + (game->player.pos_x / CUBE_SIZE) * scale;
-	py = MINIMAP_MARGIN + (game->player.pos_y / CUBE_SIZE) * scale;
-	draw_square(&game->screen, px - 2, py - 2, 4, 0xFF0000);
-	p1.x = px;
-	p1.y = py;
-	p2.x = px + cos(game->player.dir) * 10;
-	p2.y = py + sin(game->player.dir) * 10;
-	ft_draw_line(&game->screen, p1, p2, 0xFF0000);
+	center.x = MINIMAP_MARGIN + (game->player.pos_x / CUBE_SIZE) * scale;
+	center.y = MINIMAP_MARGIN + (game->player.pos_y / CUBE_SIZE) * scale;
+	draw_square(&game->screen, (t_point){center.x - 2, center.y - 2}, 4,
+		0xFF0000);
+	dir.x = center.x + cos(game->player.dir) * 10;
+	dir.y = center.y + sin(game->player.dir) * 10;
+	ft_draw_line(&game->screen, center, dir, 0xFF0000);
 }
 
+/**
+ * Fonction principale pour dessiner la minimap
+ */
 void	draw_minimap(t_game *game)
 {
-	int	scale;
-
-	scale = MINIMAP_SCALE;
-	draw_minimap_tiles(game, scale);
-	draw_player(game, scale);
+	draw_minimap_tiles(game, MINIMAP_SCALE);
+	draw_player(game, MINIMAP_SCALE);
 }

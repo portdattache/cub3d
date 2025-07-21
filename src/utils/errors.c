@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bcaumont <bcaumont@student.42.fr>          +#+  +:+       +#+        */
+/*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:44:48 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/19 21:37:04 by bcaumont         ###   ########.fr       */
+/*   Updated: 2025/07/21 02:55:17 by broboeuf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	is_file_extension_correct(char *filename)
 	if (i < 5)
 		return (0);
 	if (filename[i - 1] != 'b' || filename[i - 2] != 'u' || filename[i
-		- 3] != 'c' || filename[i - 4] != '.')
+			- 3] != 'c' || filename[i - 4] != '.')
 		return (0);
 	return (1);
 }
