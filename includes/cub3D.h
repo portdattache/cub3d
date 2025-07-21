@@ -6,7 +6,7 @@
 /*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:27:03 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/21 01:36:25 by broboeuf         ###   ########.fr       */
+/*   Updated: 2025/07/21 19:57:09 by broboeuf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,6 @@
 /* --- Positionnement de la minimap --- */
 # define MINIMAP_SCALE 8
 # define MINIMAP_MARGIN 10
-/* --- Debug --- */
-# define DEBUG 1
 
 /* --- Direction des murs --- */
 enum					e_direction

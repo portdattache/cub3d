@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bcaumont <bcaumont@student.42.fr>          +#+  +:+       +#+        */
+/*   By: broboeuf <broboeuf@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:28:02 by broboeuf          #+#    #+#             */
-/*   Updated: 2025/07/20 00:23:27 by bcaumont         ###   ########.fr       */
+/*   Updated: 2025/07/21 21:14:28 by broboeuf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ static int	handle_keys(int key, t_game *game)
 {
 	if (key == LEFT_ARROW || key == RIGHT_ARROW)
 	{
-		mlx_destroy_image(game->mlx, game->screen.img);
 		if (key == LEFT_ARROW)
 			game->player.dir -= ROT_SPEED;
 		else
